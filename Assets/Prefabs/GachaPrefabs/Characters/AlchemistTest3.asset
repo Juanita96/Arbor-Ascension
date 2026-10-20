@@ -14,3 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlchemistInfo
   image: {fileID: -7475694655896460195, guid: 88e950241d94ac744bbc671c97d400e9, type: 3}
   charName: Beta
+  Element: 2
+  Resource: 2
+  MaxHealth: 160
+  Prefab: {fileID: 0}
+  Kit: 2
+  BasicDamage: 6
+  BasicInterval: 1.5
+  ActiveCooldown: 14
+  ActiveValue: 0
+  LeaderValue: 200

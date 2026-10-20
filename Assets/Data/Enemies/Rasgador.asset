@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d502f33b97e4d4b82974b2e3c650c3, type: 3}
+  m_Name: Rasgador
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  DisplayName: Rasgador
+  Prefab: {fileID: 3767980969059518651, guid: ed6ba85cef92c4e35be8a024450ecf59, type: 3}
+  IsBoss: 0
+  MaxHealth: 30
+  MoveSpeed: 5
+  Damage: 5
+  AttackInterval: 1
+  Tint: {r: 0.78, g: 0.38, b: 0.58, a: 1}
+  Scale: 1
+  ContactDistance: 1
+  ColliderRadius: 0.4
+  ResourceReward: 1
+  GoldDustReward: 10

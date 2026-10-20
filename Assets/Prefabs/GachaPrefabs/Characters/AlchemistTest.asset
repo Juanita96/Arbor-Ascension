@@ -14,3 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlchemistInfo
   image: {fileID: -6032921277481534168, guid: 795a986da3e443047b0dc3d5f4e7aa8a, type: 3}
   charName: GirliePop
+  Element: 0
+  Resource: 0
+  MaxHealth: 80
+  Prefab: {fileID: 0}
+  Kit: 0
+  BasicDamage: 10
+  BasicInterval: 1
+  ActiveCooldown: 12
+  ActiveValue: 40
+  LeaderValue: 60

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0380dba5e3a5542eabdfc6c5c4be8b8c, type: 3}
+  m_Name: ArborGameConfig
+  m_EditorClassIdentifier: Assembly-CSharp::GameConfig
+  AllAlchemists:
+  - {fileID: 11400000, guid: a886fb37d6de2df4ab8157a935d13432, type: 2}
+  - {fileID: 11400000, guid: 0a9f93f1255aba343b2f6cf60d23caf9, type: 2}
+  - {fileID: 11400000, guid: f01aa1057e603f342ad67d6a1dca0161, type: 2}
+  - {fileID: 11400000, guid: 75eac31d49b02394fa23547956eb24eb, type: 2}
+  StarterAlchemists:
+  - {fileID: 11400000, guid: a886fb37d6de2df4ab8157a935d13432, type: 2}
+  - {fileID: 11400000, guid: 75eac31d49b02394fa23547956eb24eb, type: 2}
+  ReserveAlchemist: {fileID: 11400000, guid: 75eac31d49b02394fa23547956eb24eb, type: 2}
+  DefaultCharacterPrefab: {fileID: 2210419018721117151, guid: 5beef13d65ac3492c98423aa40aab0d9, type: 3}
+  StartingGoldDust: 1000000
+  PullCost: 100
+  DuplicateGoldDustReward: 50
+  Tower: {fileID: 11400000, guid: a6969bc32bca94a86bf44442840dc6ea, type: 2}
+  ReserveUnlockLevel: 2
+  CombatScene: Combat
+  PlayMenuScene: PlayMenu
+  TeamScene: ArrangeTeam
+  MainMenuScene: MainMenu

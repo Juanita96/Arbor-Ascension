@@ -14,3 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlchemistInfo
   image: {fileID: 1279690234193585194, guid: d1e0c9ada3af43e4eb459c0f8ee4083b, type: 3}
   charName: Sigma
+  Element: 1
+  Resource: 1
+  MaxHealth: 100
+  Prefab: {fileID: 0}
+  Kit: 1
+  BasicDamage: 4
+  BasicInterval: 1.5
+  ActiveCooldown: 15
+  ActiveValue: 30
+  LeaderValue: 45

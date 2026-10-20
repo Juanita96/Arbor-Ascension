@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb7623dec93c4141bab58f3663d5408, type: 3}
+  m_Name: TowerConfig
+  m_EditorClassIdentifier: Assembly-CSharp::TowerConfig
+  Levels:
+  - MaxHealth: 300
+    UpgradeCost:
+      Sulfur: 0
+      Mercurius: 0
+      Sal: 0
+    VisualPrefab: {fileID: 0}
+  - MaxHealth: 300
+    UpgradeCost:
+      Sulfur: 10
+      Mercurius: 10
+      Sal: 10
+    VisualPrefab: {fileID: 0}
