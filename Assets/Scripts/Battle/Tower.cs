@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform VisualRoot;
 
     public Health Health { get; private set; }
+    public TowerConfig.TowerLevel LevelData { get; private set; }
 
     // functions
     private void Awake()
@@ -37,18 +38,24 @@ public class Tower : MonoBehaviour
         Level = Mathf.Clamp(PlayerInventory.Instance.TowerLevel, 1, TowerConfiguration.MaxLevel);
 
         // setting the health of that level
-        TowerConfig.TowerLevel LevelData = TowerConfiguration.Get(Level);
+        LevelData = TowerConfiguration.Get(Level);
         Health.SetMax(LevelData.MaxHealth);
+
+        Transform Parent = VisualRoot;
+        if (Parent == null)
+        {
+            Parent = transform;
+        }
+
+        // making the tree bigger on higher levels
+        if (VisualRoot != null)
+        {
+            VisualRoot.localScale = Vector3.Scale(VisualRoot.localScale, new Vector3(LevelData.VisualScale, LevelData.VisualScale, 1f));
+        }
 
         // creating the visual of the level if there is one
         if (LevelData.VisualPrefab != null)
         {
-            Transform Parent = VisualRoot;
-            if (Parent == null)
-            {
-                Parent = transform;
-            }
-
             Instantiate(LevelData.VisualPrefab, Parent);
         }
     }

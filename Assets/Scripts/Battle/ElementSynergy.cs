@@ -7,6 +7,8 @@ public struct TeamBonuses
     public float Synergy;
     public float ReserveBasic;
     public float CooldownMultiplier;
+    public float TreeDamage;
+    public float TreeHealthMultiplier;
 
     // functions
     public static TeamBonuses None
@@ -14,7 +16,7 @@ public struct TeamBonuses
         get
         {
             // no bonuses at all
-            return new TeamBonuses { Synergy = 0f, ReserveBasic = 0f, CooldownMultiplier = 1f };
+            return new TeamBonuses { Synergy = 0f, ReserveBasic = 0f, CooldownMultiplier = 1f, TreeDamage = 0f, TreeHealthMultiplier = 1f };
         }
     }
 }

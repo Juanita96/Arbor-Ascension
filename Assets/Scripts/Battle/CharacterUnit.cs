@@ -87,6 +87,9 @@ public class CharacterUnit : MonoBehaviour
             MaxHealth = NewData.LeaderValue;
         }
 
+        // the tree level multiplies the max health
+        MaxHealth *= NewBonuses.TreeHealthMultiplier;
+
         Health = GetComponent<Health>();
         Health.SetMax(MaxHealth);
         Health.DamageTakenMultiplier = 1f;
@@ -138,7 +141,7 @@ public class CharacterUnit : MonoBehaviour
     private float BasicDamage()
     {
         // adding every bonus that affects the basic attack
-        float Bonus = Bonuses.Synergy + Bonuses.ReserveBasic;
+        float Bonus = Bonuses.Synergy + Bonuses.ReserveBasic + Bonuses.TreeDamage;
 
         // the attack passive gives extra damage while health is at 50% or more
         if (Data.Kit == Kit.Ataque && Health.Current >= Health.Max * AttackPassiveThreshold)
@@ -224,12 +227,12 @@ public class CharacterUnit : MonoBehaviour
         {
             case Kit.Ataque:
                 // piercing projectile that hits every enemy in the row
-                Launch(PiercingSpeed, PiercingRadius, Value * (1f + Bonuses.Synergy), true, new Color(1f, 0.35f, 0.2f), 1f, 0f);
+                Launch(PiercingSpeed, PiercingRadius, Value * (1f + Bonuses.Synergy + Bonuses.TreeDamage), true, new Color(1f, 0.35f, 0.2f), 1f, 0f);
                 break;
 
             case Kit.Apoyo:
                 // healing every alive alchemist of the team
-                float HealAmount = Value * (1f + Bonuses.Synergy);
+                float HealAmount = Value * (1f + Bonuses.Synergy + Bonuses.TreeDamage);
                 foreach (CharacterUnit Ally in LaneManager.Instance.GetAliveCharacters())
                 {
                     Ally.Health.Heal(HealAmount);

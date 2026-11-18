@@ -19,9 +19,15 @@ MonoBehaviour:
       Mercurius: 0
       Sal: 0
     VisualPrefab: {fileID: 0}
-  - MaxHealth: 300
+    AlchemistDamageBonus: 0
+    AlchemistHealthMultiplier: 1
+    VisualScale: 1
+  - MaxHealth: 600
     UpgradeCost:
-      Sulfur: 10
-      Mercurius: 10
-      Sal: 10
+      Sulfur: 5
+      Mercurius: 5
+      Sal: 5
     VisualPrefab: {fileID: 0}
+    AlchemistDamageBonus: 1
+    AlchemistHealthMultiplier: 2
+    VisualScale: 1.4

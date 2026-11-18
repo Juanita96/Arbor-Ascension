@@ -152,6 +152,12 @@ public class BattleHUD : MonoBehaviour
 
         TowerFill.anchorMax = new Vector2(Mathf.Clamp01(Ratio), 1f);
         TowerLabel.text = "TREE LEVEL " + CurrentTower.Level + " - " + Mathf.CeilToInt(CurrentTower.Health.Current) + "/" + Mathf.CeilToInt(CurrentTower.Health.Max);
+
+        // showing the bonus of the tree level if it gives one
+        if (CurrentTower.LevelData != null && CurrentTower.LevelData.AlchemistDamageBonus > 0f)
+        {
+            TowerLabel.text += " - DAMAGE +" + Mathf.RoundToInt(CurrentTower.LevelData.AlchemistDamageBonus * 100f) + "%";
+        }
     }
 
     private void RefreshTeam()
@@ -262,6 +268,15 @@ public class BattleHUD : MonoBehaviour
         else
         {
             BannerLabel.text = "WAVE " + (WaveIndex + 1);
+        }
+
+        // reminding the player of the tree bonus on the first wave
+        Tower CurrentTower = Battle.BattleTower;
+        bool HasTreeBonus = CurrentTower != null && CurrentTower.LevelData != null && CurrentTower.Level > 1;
+
+        if (WaveIndex == 0 && HasTreeBonus)
+        {
+            BannerLabel.text += "\nTREE LEVEL " + CurrentTower.Level + ": " + UIUtils.TreeBonusLabel(CurrentTower.LevelData);
         }
 
         BannerTimer = BannerDuration;

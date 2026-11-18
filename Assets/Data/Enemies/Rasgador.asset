@@ -23,5 +23,5 @@ MonoBehaviour:
   Scale: 1
   ContactDistance: 1
   ColliderRadius: 0.4
-  ResourceReward: 1
+  ResourceReward: 5
   GoldDustReward: 10

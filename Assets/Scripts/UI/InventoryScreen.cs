@@ -76,6 +76,7 @@ public class InventoryScreen : MonoBehaviour
         int Level = Mathf.Clamp(Inventory.TowerLevel, 1, TowerConfiguration.MaxLevel);
 
         string DesiredText = "ARBOR PHILOSOPHICA - LEVEL: " + Level + "/" + TowerConfiguration.MaxLevel + " - HP: " + TowerConfiguration.Get(Level).MaxHealth;
+        DesiredText += "\n" + UIUtils.TreeBonusLabel(TowerConfiguration.Get(Level));
 
         // making sure level isn't the maximum
         bool IsMaxLevel = Level >= TowerConfiguration.MaxLevel;
@@ -96,8 +97,12 @@ public class InventoryScreen : MonoBehaviour
                 Unlock = " - UNLOCKS " + Reserve.DisplayName;
             }
 
-            string Cost = UIUtils.CostLabel(TowerConfiguration.Get(NextLevel).UpgradeCost);
+            TowerConfig.TowerLevel NextLevelData = TowerConfiguration.Get(NextLevel);
+            string Cost = UIUtils.CostLabel(NextLevelData.UpgradeCost);
             DesiredText += $"\nUPGRADE TO LEVEL {NextLevel}{Unlock}: {Cost}";
+
+            // showing what the next level gives
+            DesiredText += "\nNEXT LEVEL: TREE HP " + NextLevelData.MaxHealth + " - " + UIUtils.TreeBonusLabel(NextLevelData);
         }
 
         // the button only works if there is a next level and the player can pay

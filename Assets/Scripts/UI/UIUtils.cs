@@ -66,6 +66,17 @@ public static class UIUtils
         return Cost.Sulfur + " SULPHUR - " + Cost.Mercurius + " MERCURIUS - " + Cost.Sal + " SALT";
     }
 
+    public static string TreeBonusLabel(TowerConfig.TowerLevel Level)
+    {
+        // bonus that a tree level gives to the alchemists
+        if (Level.AlchemistDamageBonus <= 0f && Level.AlchemistHealthMultiplier <= 1f)
+        {
+            return "ALCHEMISTS: NO BONUS";
+        }
+
+        return "ALCHEMISTS: DAMAGE +" + Mathf.RoundToInt(Level.AlchemistDamageBonus * 100f) + "% - HP x" + Level.AlchemistHealthMultiplier;
+    }
+
     public static void ClearChildren(Transform Parent)
     {
         // detaching before destroying so the layout doesn't count them this frame

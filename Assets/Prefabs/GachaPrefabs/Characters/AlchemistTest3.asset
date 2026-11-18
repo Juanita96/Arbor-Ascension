@@ -21,6 +21,6 @@ MonoBehaviour:
   Kit: 2
   BasicDamage: 6
   BasicInterval: 1.5
-  ActiveCooldown: 14
+  ActiveCooldown: 7
   ActiveValue: 0
   LeaderValue: 200

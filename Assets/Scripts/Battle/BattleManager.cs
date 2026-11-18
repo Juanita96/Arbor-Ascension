@@ -122,7 +122,7 @@ public class BattleManager : MonoBehaviour
         }
 
         // calculating the team bonuses once
-        Bonuses = CalculateBonuses(AttackTeam, Inventory);
+        Bonuses = CalculateBonuses(AttackTeam, Inventory, Tower.LevelData);
         DistinctElements = ElementSynergy.CountDistinct(AttackTeam);
 
         // using the chosen leader, or the first alchemist if it's not in the team
@@ -200,7 +200,7 @@ public class BattleManager : MonoBehaviour
         return AttackTeam;
     }
 
-    private static TeamBonuses CalculateBonuses(List<AlchemistInfo> AttackTeam, PlayerInventory Inventory)
+    private static TeamBonuses CalculateBonuses(List<AlchemistInfo> AttackTeam, PlayerInventory Inventory, TowerConfig.TowerLevel TreeLevel)
     {
         TeamBonuses NewBonuses = TeamBonuses.None;
 
@@ -221,6 +221,13 @@ public class BattleManager : MonoBehaviour
         if (ReserveLeader != null && ReserveLeader.Kit == Kit.Reserva)
         {
             NewBonuses.CooldownMultiplier = 1f - ReserveLeader.LeaderValue;
+        }
+
+        // bonuses given by the level of the tree
+        if (TreeLevel != null)
+        {
+            NewBonuses.TreeDamage = TreeLevel.AlchemistDamageBonus;
+            NewBonuses.TreeHealthMultiplier = TreeLevel.AlchemistHealthMultiplier;
         }
 
         return NewBonuses;
